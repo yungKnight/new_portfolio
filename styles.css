@@ -1,0 +1,140 @@
+html, body {
+    height: auto;
+    margin: 10px;
+    overflow-y: scroll;
+    font-size: 16px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.introductory-metaphor {
+    font-family: "Rock Salt", cursive;
+    font-weight: 550;
+    position: absolute;
+    top: 0;
+    left: 15vw;
+    color: white;
+    z-index: 10;
+    font-size: 30px;
+} 
+
+#welcome {
+    position: absolute;
+    top: 20%;
+    left: 55vw;
+    color: white;
+    z-index: 10;
+    text-align: center;
+    font-family: "Rock Salt", cursive;
+    font-weight: 400;
+    font-style: normal;
+    width: auto;
+    height: auto;
+    padding-right: 15px;
+}
+
+#others {
+    position: absolute;
+    top: 105%;
+    left: 1.5vw;
+    z-index: 10;
+    text-align: center;
+    color: white;
+    width: 40%;
+    font-family: "Rock Salt", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#welcome > h2,
+#welcome > h3 {
+    margin: 0;
+    position: relative;
+    opacity: 0.85;
+}
+
+p {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 30px;
+  margin-left: 15px;
+}
+
+#welcome > h3 {
+    font-size: 35px;
+}
+
+#welcome > h2 {
+    font-size: 45px;
+    margin-left: 75px;
+}
+
+#the-journey {
+    position: absolute;
+    top: 180vh;         
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+    width: 90%;
+}
+
+#the-journey > h2 {
+    position: relative;
+    font-family: "Rock Salt", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    margin: 0;
+    text-decoration: underline double white 1px;
+}
+
+#the-journey > p {
+    padding: 10px;
+    font-size: 18px;
+    margin: 0 0 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#typed-text {
+    margin-left: 105px;
+    display: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white; /* Cursor */
+    font-size: 50px; 
+    animation: typing 2s steps(9, end) forwards, blink .5s step-end infinite alternate;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: max(30%, 330px);
+  }
+}
+
+/* Cursor blinking */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
