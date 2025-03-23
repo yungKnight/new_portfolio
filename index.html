@@ -27,29 +27,31 @@
     <section id="welcome">
         <h3 id="brag-question">Developers exist but</h3>
         <h2 id="brag">There is only one <span id="typed-text" style="display: block; letter-spacing: 4px;">"Kennery"</span></h2>
-        <p>I am "Ajayi Eniola Adedayo"- an Economics major graduate and a passionate web developer who's always hungry for knowledge, my curiosity drives me to dig deeper, explore new ideas, and keep asking questions. I also am a key believer in the possibilities that abound within the blockchain economy and enthusiastically look forward to a decentralized world.</p>
+        <p id="about-me">I am "Ajayi Eniola Adedayo"- an Economics major graduate and a passionate web developer who's always hungry for knowledge, my curiosity drives me to dig deeper, explore new ideas, and keep asking questions. I also am a key believer in the possibilities that abound within the blockchain economy and enthusiastically look forward to a decentralized world.</p>
     </section>
-    <section id="others">
-        <p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </section>
+    <div id="the-rest">
+        <section id="others">
+            <p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
 
-    <section id="the-journey">
-        <h2>The Journey So Far</h2>
-        <p id="the-journey-detail">
-            September 2022, I was just a curious web surfer, fascinated by how websites worked. Then I discovered front-end development—HTML, CSS, JavaScript—and got hooked. 
+        <section id="the-journey">
+            <h2>The Journey So Far</h2>
+            <p id="the-journey-detail">
+                September 2022, I was just a curious web surfer, fascinated by how websites worked. Then I discovered front-end development—HTML, CSS, JavaScript—and got hooked. 
 
-            By October 2023, I built GuessMaster, a simple number-guessing game that I leveled up with multi-level logic. Not groundbreaking, but it proved I could build something real. A month later, I graduated as an economist, though being a programmer had already stolen the spotlight. 
+                By October 2023, I built GuessMaster, a simple number-guessing game that I  leveled up with multi-level logic. Not groundbreaking, but it proved I could build something real. A month later, I graduated as an economist, though being a programmer had already stolen the spotlight. 
 
-            Mid-2024, I got serious—learning Python, web scraping, automation, and Django. I built a Google Maps scraper, got into GitHub, and dove into full-stack development. March 2025 was a win— I earned my first tech certification in JavaScript DSA from freeCodeCamp. 
+                Mid-2024, I got serious—learning Python, web scraping, automation, and Django. I built a Google Maps scraper, got into GitHub, and dove into full-stack development. March 2025 was a win— I earned my first tech certification in JavaScript DSA from freeCodeCamp. 
 
-            Now, I'm in the final stages developing a web app that helps students analyze their results, get insights, and improve performance. The sky? It's starting to look like the beginning. The ride's been wild, and I'm just getting started.
-        </p>
-    </section>
+                Now, I'm in the final stages developing a web app that helps students analyze their results, get insights, and improve performance. The sky? It's starting to look like the beginning. The ride's been wild, and I'm just getting started.
+            </p>
+        </section>
+    </div>
     <script>
         const h = window.innerHeight;
         const w = window.innerWidth;
@@ -148,6 +150,12 @@
             mesh.rotation.y = t * -0.0005;
         };
         animate();
+
+        window.addEventListener("resize", () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
     </script>
     <script src="animations.js"></script>
 
