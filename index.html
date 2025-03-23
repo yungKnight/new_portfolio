@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kennery's Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+</head>
+<body>
+    <canvas id="bg"></canvas>
+    <div id="introductory-speech">
+        <h2 class="introductory-metaphor">
+            <span>Many stars populate the sky,</span><span> but only one moon</span>
+        </h2>  
+    </div>
+    <section id="welcome">
+        <h3 id="brag-question">Developers exist but</h3>
+        <h2 id="brag">There is only one <span id="typed-text" style="display: block; letter-spacing: 4px;">"Kennery"</span></h2>
+        <p>I am "Ajayi Eniola Adedayo"- an Economics major graduate and a passionate web developer who's always hungry for knowledge, my curiosity drives me to dig deeper, explore new ideas, and keep asking questions. I also am a key believer in the possibilities that abound within the blockchain economy and enthusiastically look forward to a decentralized world.</p>
+    </section>
+    <section id="others">
+        <p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+
+    <section id="the-journey">
+        <h2>The Journey So Far</h2>
+        <p id="the-journey-detail">
+            September 2022, I was just a curious web surfer, fascinated by how websites worked. Then I discovered front-end development—HTML, CSS, JavaScript—and got hooked. 
+
+            By October 2023, I built GuessMaster, a simple number-guessing game that I leveled up with multi-level logic. Not groundbreaking, but it proved I could build something real. A month later, I graduated as an economist, though being a programmer had already stolen the spotlight. 
+
+            Mid-2024, I got serious—learning Python, web scraping, automation, and Django. I built a Google Maps scraper, got into GitHub, and dove into full-stack development. March 2025 was a win— I earned my first tech certification in JavaScript DSA from freeCodeCamp. 
+
+            Now, I'm in the final stages developing a web app that helps students analyze their results, get insights, and improve performance. The sky? It's starting to look like the beginning. The ride's been wild, and I'm just getting started.
+        </p>
+    </section>
+    <script>
+        const h = window.innerHeight;
+        const w = window.innerWidth;
+    
+        const renderer = new THREE.WebGLRenderer({
+            canvas: document.getElementById('bg'),
+            antialias: true,
+        });
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(w, h);
+    
+        const fov = 90;
+        const aspect = w / h;
+        const near = 0.1;
+        const far = 100;
+    
+        const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+        camera.position.z = 2;
+    
+        const scene = new THREE.Scene();
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        
+        controls.enableZoom = false;
+        controls.enableRotate = true;
+        controls.enablePan = false;
+
+        const pointLight = new THREE.PointLight(0xffffff, 1);
+        scene.add(pointLight);
+        
+        const ambientLight = new THREE.AmbientLight(0x404040, 0.75);
+        scene.add(ambientLight);
+
+        const addStar = () => {
+            const geo = new THREE.SphereGeometry(0.25, 24, 24);
+            const material = new THREE.MeshStandardMaterial({color: 0xffffff});
+            const star = new THREE.Mesh(geo, material);
+            const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(250));
+            star.position.set(x, y, z);
+            scene.add(star);
+        };
+        
+        Array(2500).fill().forEach(() => addStar());
+    
+        const geo = new THREE.IcosahedronGeometry(1.0, 2);
+        const basicMaterial = new THREE.MeshStandardMaterial({
+            color: "white",    
+            wireframe: false,  
+            flatShading: true,
+        });
+    
+        const mesh = new THREE.Mesh(geo, basicMaterial);
+        scene.add(mesh);
+    
+        const hemiLight = new THREE.HemisphereLight("blue", "green", 0.7);
+        scene.add(hemiLight);
+    
+        const wireMaterial = new THREE.MeshBasicMaterial({
+            color: "yellow",
+            wireframe: true,
+        });
+        const wireMesh = new THREE.Mesh(geo, wireMaterial);
+        wireMesh.scale.setScalar(1.005);
+        mesh.add(wireMesh);
+
+        let lastScrollY = 0;
+        window.addEventListener("scroll", () => {
+            let scrollY = window.scrollY; 
+            
+            gsap.to(camera.position, {
+                z: 2 + scrollY * 0.01,
+                x: -scrollY * 0.0015,
+                y: scrollY * 0.0003,
+                duration: 0.5,
+                ease: "power2.out"
+            });
+
+            let rotationSpeed = (scrollY - lastScrollY) * 0.01;
+            gsap.to(mesh.rotation, {
+                x: mesh.rotation.x + rotationSpeed,
+                y: mesh.rotation.y - rotationSpeed,
+                z: mesh.rotation.z + rotationSpeed * 0.5,
+                duration: 0.5,
+                ease: "power2.out"
+            });
+
+            lastScrollY = scrollY;
+        });
+
+        const animate = (t = 0) => {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+
+            mesh.rotation.z = t * -0.0001;
+            mesh.rotation.x = t * 0.0001;
+            mesh.rotation.y = t * -0.0005;
+        };
+        animate();
+    </script>
+    <!--<script src="animations.js"></script>-->
+
+    <!--<script>
+        gsap.to(".introductory-metaphor", {
+          motionPath: {
+            path: "M10,100 C80,20 150,180 210,100 S350,20 410,100 T10,100", 
+            align: "self",
+            alignOrigin: [0.8, 0.9],
+            autoRotate: false,
+          },
+          transformOrigin: "50% 50%",
+          duration: 3,
+          yoyo: true,  // Makes it go back to the start smoothly
+          ease: "power1.inOut",
+        });
+    </script>-->
+</body>
+</html>
