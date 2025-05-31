@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SVG Clip Path Grid</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .grid-container {
+      margin: auto;
+      width: 50vw;
+      max-width: 400px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 20px;
+      overflow: visible;
+    }
+    .grid-item + .grid-item { margin-left: -8px; }
+    .grid-container:hover{
+    	filter: drop-shadow(10px 15px 5px rgba(0, 0, 0, 0.15));
+    }
+    .grid-item {
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      background-color: #282828;
+      opacity: 0.5;
+    }
+    .grid-item:hover{
+    	transform: scale(1.1);
+    	margin: 0;
+    }
+    .item-1 {
+      clip-path: url(#firstItem);
+    }
+
+    .item-2 {
+      clip-path: url(#secondItem);
+    }
+
+    .item-3 {
+      clip-path: url(#thirdItem);
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="grid-item item-1">About</div>
+    <div class="grid-item item-2">Projects</div>
+    <div class="grid-item item-3">Contact</div>
+  </div>
+
+  <svg width="0" height="0">
+    <defs>
+      <clipPath id="firstItem" clipPathUnits="objectBoundingBox">
+        <path d="M 0.10 1 L 0 0.75 L 0 0 L 1 0 L 1 0.25 L 0.95 0.35 L 0.95 0.65 L 1 0.75 L 1 1 Z" />
+      </clipPath>
+      <clipPath id="secondItem" clipPathUnits="objectBoundingBox">
+        <path d="M 0.05 0 L 0.95 0 L 0.95 0.2 L 1 0.35 L 1 0.65 L 0.95 0.8 L 0.95 1 L 0.05 1 L 0.05 0.8 L 0 0.65 L 0 0.35 L 0.05 0.2 Z" />
+      </clipPath>
+      <clipPath id="thirdItem" clipPathUnits="objectBoundingBox">
+        <path d="M 0 0 L 0.9 0 L 1 0.25 L 1 1 L 0 1 L 0 0.75 L 0.05 0.65 L 0.05 0.35 L 0 0.35 Z" />
+      </clipPath>
+    </defs>
+  </svg>
+</body>
+</html>

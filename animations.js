@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log(window.innerWidth);
-
     gsap.set(".introductory-metaphor span", { opacity: 1 });
     gsap.set("#brag-question", { opacity: 1, scale: 1.1 });
 
@@ -10,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     gsap.set("#typed-text", { opacity: 0, scale: 0.25 });
     gsap.set("#about-me", { opacity: 0 });
+    gsap.set(".grid-container", {opacity: 0});
 
     disableScroll();
 
@@ -21,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .to("#brag-question", { opacity: 0, scale: 0.5, duration: 0.75}, "+=0.2")    
         .to("#typed-text", { opacity: 1, scale: 1.3, duration: 0.5, onStart: startTypingAnimation }, "-=0.5")
         .to("#welcome", { y: -40, duration: 0.25 }, "-=0.25")
+        .to(".grid-container", {opacity:1, duration:0.50}, "-=0.50")
         .to("#about-me", { opacity: 1, duration: 0.25, onComplete: enableScroll }, "-=0.25");
 
     function startTypingAnimation() {
