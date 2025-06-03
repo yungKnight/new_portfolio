@@ -4,11 +4,9 @@ html, body {
     overflow-y: scroll;
     font-size: 16px;
 }
-
 body::-webkit-scrollbar {
     display: none;
 }
-
 #bg {
     position: fixed;
     top: 0;
@@ -29,7 +27,7 @@ body::-webkit-scrollbar {
     font-size: 30px;
 } 
 b{
-    font-size: 20px;
+    font-size: 18px;
 }
 #welcome {
     position: absolute;
@@ -117,6 +115,69 @@ b{
     font-weight: 400;
     font-style: normal;
 }
+#contact-me {
+    position: absolute;
+    top: 315%;
+    z-index: 10;
+    width: 97%;
+    height: auto;
+    background: black;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    padding: 20px 50px 20px 50px;
+    display: grid;
+    grid-template-rows: 75% 25%;
+    gap: 0.25em;
+}
+#contact-me > div {
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 59% 41%;
+    column-gap: 1.5em;
+}
+#contact-me  > div > p {
+    margin: 0;
+    grid-column: 1;
+    text-align: center;
+}
+#contact-me p {
+    margin: 0;
+}
+p span {
+    display: inline-block;
+    width: 1.75em;
+}
+#line {
+    border-top: 2px solid #fff;
+    vertical-align: middle;
+    margin-left: -0.75em;
+}
+#visible-contact {
+    grid-column: 2;
+    text-align: left;
+    background: inherit;
+    display: grid;
+    grid-template-columns: 0.925fr 1fr;
+    place-items: center;
+}
+#visible-contact span {
+   display: inline-block;
+   border-left: 2px solid #fff;
+   height: 1em;
+   margin: 0 10px;
+}
+#contact-me > h3 {
+    margin: 0;
+    grid-row: 2;
+}
+#copy-logo {
+    font-size: 2em;
+    vertical-align: middle;
+}
+script {
+    margin-left: -0.75em;
+}
 #others > div {
     background: rgba(255, 220, 130, 0.45);
     box-sizing: border-box;
@@ -130,8 +191,12 @@ b{
 }
 #others > div:hover{
     background: lightblue;
-    transform: scale(1.03);
+    transform: scale(1.04);
     opacity: 1;
+}
+#others:hover:before {
+    background: lightblue;
+    opacity: 0.75;
 }
 #others:before {
     content: "";
@@ -151,7 +216,7 @@ b{
 #others > p {
     grid-column: 2;
     margin: 0;
-    font-size: 25px;
+    font-size: 27px;
     display: flex;
     align-items: center;
 }
@@ -161,7 +226,6 @@ b{
     position: relative;
     opacity: 0.85;
 }
-
 p {
   font-family: "Space Mono", monospace;
   font-weight: 400;
@@ -182,7 +246,7 @@ p {
 
 #the-journey {
     position: absolute;
-    top: 160vh;         
+    top: 155vh;         
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -190,7 +254,6 @@ p {
     z-index: 10;
     width: 90%;
 }
-
 #the-journey > h2 {
     position: relative;
     font-family: "Rock Salt", cursive;
@@ -200,7 +263,6 @@ p {
     margin: 0;
     text-decoration: underline double white 1px;
 }
-
 #the-journey > p {
     padding: 10px;
     font-size: 18px;
@@ -210,15 +272,18 @@ p {
     padding: 10px;
     border-radius: 10px;
 }
-
+#the-journey > hr {
+    color: #282828;
+}
 #typed-text {
     margin-left: 105px;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid white;
     font-size: 50px; 
+    display: block;
+    letter-spacing: 4px;
 }
-
 @keyframes typing {
   from {
     width: 0;
@@ -233,9 +298,18 @@ p {
     border-color: transparent;
   }
 }
-
-#my-projects {
+#projects {
     position: absolute;
-    top: 200vh; 
-    height: 150vh;
+    top: 215%;
+    z-index: 40;
+    width: 97%;
+    height: auto;
+    background: white;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    padding: 20px 50px 20px 50px;
+    display: grid;
+    grid-template-rows: 75% 25%;
+    gap: 0.25em;
 }

@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Rock+Salt&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="shortcut icon" href="Images/favicon.ico">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
@@ -18,6 +19,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
 </head>
 <body>
     <canvas id="bg"></canvas>
@@ -53,15 +55,27 @@
             <clipPath id="pic-holder" clipPathUnits="objectBoundingBox">
                 <path d="M 0.1 0 L 0.45 0 L 0.50 0.05 L 1 0.05 L 1 0.55 L 0.80 0.55 L 0.80 0.95 L 0.7 1 L 0 1 L 0 0.10 Z"/>
             </clipPath>
+            <clipPath id="project-holder" clipPathUnits="objectBoundingBox">
+                <path d="M 0.07 0 L 0.45 0 L 0.50 0.1 L 1 0.1 L 1 0.9 L 0.95 1 L 0.25 1 L 0.05 0.7 L 0.05 0.5 L 0 0.35 L 0 0.15 Z"/>
+            </clipPath>
+            <clipPath id="triangleClip" clipPathUnits="objectBoundingBox">
+                <polygon points="0,0 0,1 1,1"/>
+            </clipPath>
         </defs>
     </svg>
 
     <section id="welcome">
         <h3 id="brag-question">Developers exist but</h3>
-        <h2 id="brag">There is only one <span id="typed-text" style="display: block; letter-spacing: 4px;">"Kennery"</span></h2>
+        <h2 id="brag">There is only one <span id="typed-text">"Kennery"</span></h2>
         <p id="about-me">
             I am "Ajayi Eniola Adedayo"- an Economics major graduate and a passionate <b>Web developer</b> who's always hungry for knowledge, my curiosity drives me to dig deeper, explore new ideas, and keep asking questions. I also am a key believer in the possibilities that abound within the blockchain economy and enthusiastically look forward to a decentralized world.
         </p>
+        <!--<span id="tales">
+            I'm also<hr style="display: inline-block; width: 300px;"><br>
+            1. A generalist that builds using AI<br>
+            2. Currently available for roles-  Contract or Full Time<br>
+            3. Something of a polyglot speaking- English(Proficient), Yoruba(Native), and Spanish(Conversational)
+        </span>-->
     </section>
     <div id="the-rest">
         <section id="others">
@@ -69,7 +83,7 @@
                 <img src="images/official.jpg">
             </div>
             <p>
-                Think of me as an explorer that loves to learn new things, understand how they work and build new stuff            
+                Who <br>is <br>Kennery?           
             </p>
         </section>
 
@@ -84,16 +98,49 @@
 
                 The sky? It's starting to look like the beginning. The ride's been wild, and I'm just getting started.
             </p>
+            <hr>
+        </section>
+        <section id="projects">
+            
+        </section>
+        <section id="contact-me">
+            <div>
+                <p>
+                    Follow me on X | Check my code repositories out | Hire me on Upwork | LinkedIn | Get in touch
+                </p>
+                <div id="visible-contact">
+                    <div>
+                        <label for="phone-number">Contact Me</label>
+                        <p id="phone-number">
+                            +234 706 762 9669
+                            <span></span>
+                        </p>
+                    </div>
+                    <div>
+                        <label for="visible-email">Email</label>
+                        <p id="visible-email">Badoknight1@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <p>
+                <span id="copy-logo">&copy;</span>
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+                <span id="line"></span>
+                <mark class="devName">Ajayi Eniola</mark> 
+            </p>
         </section>
 
-        <section id="my-projects">
+
+        <!--<section id="my-projects">
              <p>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </section>
+        </section>-->
     </div>
     <script>
         const h = window.innerHeight;
@@ -194,7 +241,7 @@
         };
         animate();
         
-        gsap.registerPlugin(ScrollTrigger, Flip);
+        gsap.registerPlugin(ScrollTrigger, Flip, ScrambleTextPlugin);
 
         let state = Flip.getState(".grid-container");
         
@@ -203,7 +250,7 @@
           start: "top 25%",
           end: "bottom 25%",
           scrub: true,
-          markers: true,
+          //markers: true,
           onUpdate: (self) => {
             if (self.progress > 0.65) {
               document.querySelector(".grid-container").style.left = "40%";
@@ -279,6 +326,59 @@
             nav.style.opacity = "1";
             nav.style.left = "50%";
           }
+        });
+
+        // Replace your existing scramble text ScrollTrigger with this:
+
+        ScrollTrigger.create({
+          trigger: "#others",
+          start: "top 55%",
+          end: "bottom 25%",
+          scrub: true,
+          onEnter: () => {
+            const paragraph = document.querySelector("#others p");
+            const parentWidth = paragraph.parentElement.offsetWidth;
+            const computedStyle = window.getComputedStyle(paragraph);
+            
+            const currentWidth = paragraph.offsetWidth;
+            const currentHeight = paragraph.offsetHeight;
+            
+            gsap.set("#others p", {
+              width: currentWidth + "px",
+              minWidth: currentWidth + "px",
+              maxWidth: currentWidth + "px",
+              height: currentHeight + "px",
+              minHeight: currentHeight + "px",
+              whiteSpace: "normal",
+              wordWrap: "break-word",
+              overflowWrap: "break-word",
+              overflow: "hidden",
+              boxSizing: "border-box"
+            });
+            
+            gsap.to("#others p", {
+              duration: 1,
+              scrambleText: {
+                text: "Think of me as an explorer that loves to learn new things, understand how they work and build new stuff",
+                chars: "lowerCase",
+                revealDelay: 0.05,
+                speed: 0.7,
+                delimiter: " ",
+                tweenLength: false
+              }
+            });
+          },
+          onLeave: () => {
+            gsap.set("#others p", {
+              width: "auto",
+              minWidth: "auto", 
+              maxWidth: "none",
+              height: "auto",
+              minHeight: "auto",
+              overflow: "visible",
+              text: "Think of me as an explorer that loves to learn new things, understand how they work and build new stuff"
+            });
+          },
         });
 
         window.addEventListener("resize", () => {
