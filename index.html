@@ -98,10 +98,89 @@
 
                 The sky? It's starting to look like the beginning. The ride's been wild, and I'm just getting started.
             </p>
-            <hr>
         </section>
         <section id="projects">
-            
+            <h2>Selected Work</h2>
+            <div class="my-projects">
+                <div class="project project1">
+                    <div class="project-logo">
+                        <img src="images/edu-shot.png">
+                    </div>
+                    <div class="project-description">
+                        <p class="overview">
+                            Edunalytica is more than just a frontend, neither is it just another dashboard- as its name "Edunalytica"- a combination of the words "Educational" and "Analytic" implies, it is a logic that brings a clarity layer to existing grades data and enables personalized optimization advise.
+                        </p>
+                        <span>
+                            Check it out on here: edunalytica.onrender.com
+                        </span>
+                        <hr>
+                        <div>
+                            <h4>Existing Inadequacies</h4>
+                            <ol>
+                                <li><p>&#8213;&nbsp;Clumsy grades data</p></li>
+                                <li><p>&#8213;&nbsp;No visualizations</p></li>
+                                <li><p>&#8213;&nbsp;Generalized perception of courses</p></li>
+                            </ol>
+                        </div>
+                        <hr>
+                        <div>
+                            <h4>Our Solution</h4>
+                            <ol>
+                                <li><p>&#10133;&nbsp;Visualized charts to spot trends fast</p></li>
+                                <li><p>&#10133;&nbsp;Allows for categorization of courses</p></li>
+                                <li><p>&#10133;&nbsp;Statistical analysis powered personalized optimization strategies</p></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project project2">
+                    <div class="project-logo">
+                        <img src="images/edu-shot.png">
+                    </div>
+                    <div class="project-description">
+                        <p class="overview">
+                            This project isn't limited to a UI-bound tool— it’s a focused extraction engine built to bridge curiosity with actionable data. By taking in your intent (a service) and your scope (a location), it cuts through the noise of Google Maps and returns structured insights: names, addresses, phone numbers, and websites ready for use, analysis, or outreach. At its core, it is about turning scattered local intelligence into a ready-to-use dataset.
+                        </p>
+                        <span>
+                            Check it out on here: edunalytica.onrender.com
+                        </span>
+                        <hr>
+                        <div>
+                            <h4>Features</h4>
+                            <ol>
+                                <li><p>&#10133;&nbsp;Flexible Search Parameters</p></li>
+                                <li><p>&#10133;&nbsp;Real Browser Automation</p></li>
+                                <li><p>&#10133;&nbsp;Detailed Data Extraction</p></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project project3">
+                    <div class="project-logo">
+                        <img src="images/edu-shot.png">
+                    </div>
+                    <div class="project-description">
+                        <p class="overview">
+                            Guessmaster is minimal on the surface, but layered in its design. With no logins, no downloads, a pure frontend game— just play. With levels of increasing difficulty that test not just luck, but logic, and intuition. GuessMaster isn’t just about guessing the right number— it’s about tuning into the pattern behind randomness, one submission at a time.
+                        </p>
+                        <span>
+                            Check it out on here: yungknight.github.io/GuessMaster
+                        </span>
+                        <hr>
+                        <div>
+                            <h4>Features</h4>
+                            <ol>
+                                <li><p>&#10133;&nbsp;Ready-to-play and for free too</p></li>
+                                <li><p>&#10133;&nbsp;Multi-level logic</p></li>
+                                <li><p>&#10133;&nbsp;Addictive gameplay</p></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
         </section>
         <section id="contact-me">
             <div>
@@ -250,7 +329,6 @@
           start: "top 25%",
           end: "bottom 25%",
           scrub: true,
-          //markers: true,
           onUpdate: (self) => {
             if (self.progress > 0.65) {
               document.querySelector(".grid-container").style.left = "40%";
@@ -328,8 +406,6 @@
           }
         });
 
-        // Replace your existing scramble text ScrollTrigger with this:
-
         ScrollTrigger.create({
           trigger: "#others",
           start: "top 55%",
@@ -359,7 +435,7 @@
             gsap.to("#others p", {
               duration: 1,
               scrambleText: {
-                text: "Think of me as an explorer that loves to learn new things, understand how they work and build new stuff",
+                text: "Think of me as an explorer that loves to learn new things, understand how they work and build quality stuff",
                 chars: "lowerCase",
                 revealDelay: 0.05,
                 speed: 0.7,
@@ -376,10 +452,76 @@
               height: "auto",
               minHeight: "auto",
               overflow: "visible",
-              text: "Think of me as an explorer that loves to learn new things, understand how they work and build new stuff"
+              text: "Think of me as an explorer that loves to learn new things, understand how they work and build quality stuff"
             });
           },
         });
+        const containers = document.getElementsByClassName("project-logo");
+        
+        Array.from(containers).forEach(container => {
+            container.addEventListener("mousemove", (e) => {
+                const bounds = container.getBoundingClientRect();
+        
+                const centerX = bounds.left + bounds.width / 2;
+                const centerY = bounds.top + bounds.height / 2;
+        
+                const offsetX = e.clientX - centerX;
+                const offsetY = e.clientY - centerY;
+        
+                const rotateY = gsap.utils.clamp(-20, 20, offsetX / 8);
+                const rotateX = gsap.utils.clamp(-20, 20, -offsetY / 8);
+        
+                const translateZ = Math.abs(offsetX) + Math.abs(offsetY) > 50 ? 10 : 0;
+        
+                gsap.to(container, {
+                    rotateY,
+                    rotateX,
+                    z: translateZ,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+    
+            container.addEventListener("mouseleave", () => {
+                gsap.to(container, {
+                    rotateY: 0,
+                    rotateX: 0,
+                    z: 0,
+                    duration: 0.8,
+                    ease: "power3.out"
+                });
+            });
+
+            container.addEventListener("mouseenter", () => {
+                gsap.to(container, {
+                    scale: 1.05,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+            
+            container.addEventListener("mouseleave", () => {
+                gsap.to(container, {
+                    scale: 1,
+                    duration: 0.8,
+                    ease: "power3.out"
+                });
+            });
+        });
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            .project-logo {
+                transform-style: preserve-3d;
+                perspective: 10000px;
+            }
+            
+            .project-logo img {
+                transform-style: preserve-3d;
+                transition: transform 0.1s ease-out;
+            }
+        `;
+        document.head.appendChild(style);
 
         window.addEventListener("resize", () => {
             camera.aspect = window.innerWidth / window.innerHeight;

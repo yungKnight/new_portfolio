@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 html, body {
     height: auto;
     margin: 10px;
@@ -15,7 +19,6 @@ body::-webkit-scrollbar {
     height: 100vh;
     z-index: -1;
 }
-
 .introductory-metaphor {
     font-family: "Rock Salt", cursive;
     font-weight: 550;
@@ -117,7 +120,7 @@ b{
 }
 #contact-me {
     position: absolute;
-    top: 315%;
+    top: 428%;
     z-index: 10;
     width: 97%;
     height: auto;
@@ -175,9 +178,6 @@ p span {
     font-size: 2em;
     vertical-align: middle;
 }
-script {
-    margin-left: -0.75em;
-}
 #others > div {
     background: rgba(255, 220, 130, 0.45);
     box-sizing: border-box;
@@ -208,7 +208,8 @@ script {
     background: #282828;
     opacity: 0.45;
 }
-#others > div > img {
+#others > div > img,
+img {
     width: 100%;
     height: 100%;
     object-fit: cover; 
@@ -244,7 +245,8 @@ p {
     margin-left: 75px;
 }
 
-#the-journey {
+#the-journey, 
+#projects {
     position: absolute;
     top: 155vh;         
     left: 50%;
@@ -254,7 +256,12 @@ p {
     z-index: 10;
     width: 90%;
 }
-#the-journey > h2 {
+#projects {
+    top: 215vh;
+    width: 97%;
+}
+#the-journey > h2,
+#projects > h2 {
     position: relative;
     font-family: "Rock Salt", cursive;
     font-weight: 400;
@@ -263,17 +270,133 @@ p {
     margin: 0;
     text-decoration: underline double white 1px;
 }
-#the-journey > p {
+#the-journey > p{
     padding: 10px;
     font-size: 18px;
     margin: 0 0 10px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
-    padding: 10px;
     border-radius: 10px;
 }
-#the-journey > hr {
+#projects > div.my-projects {
+    margin: 0;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+div.project {
+    display: grid;
+    grid-template-columns: 40% 57%;
+    column-gap: 2em;
+    text-align: left;
+    height: 350px;
+}
+div.project + div.project {
+    padding-top: 4.25em;
+}
+div.project:before{
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 75px;
+    background: #282828;
+    top: 380px;
+    left: 25px;
+    clip-path: url(#triangleClip);
+    transform: rotateX(3deg);
+}
+div.project.project2:before{
+    top:800px;
+}
+div.project.project1:hover:before {
+    background: rgba(0, 95, 0, 0.75);
+}
+div.project.project2:hover:before {
+    background: rgba(40, 40, 40, 0.55);
+}
+div.project.project3:hover:before {
+    background: rgba(128, 0, 32, 0.55);
+}
+div.project.project3:before{
+    top:1220px;
+}
+div.project.project1:after,
+div.project.project2:after,
+div.project.project3:after {
+    position: absolute;
+    content: "EduNalytica";
+    width: 250px;
+    text-align: center;
+    left: 270px;
+    top: 100px;
+    z-index: 5;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    font: cursive;
+    background: black;
+}
+div.project.project2:after{
+    content: "Google Map Data Extractor";
+    top: 500px;
+    font-size: 1.6rem;
+    z-index: -5;
+}
+div.project.project3:after{
+    content: "Guessmaster";
+    top: 940px;
+    z-index: -5;
+}
+.project-logo{
+    grid-column: 1;
+    margin: 0;
+    clip-path: url(#project-holder);
+}
+.project-description{
+    grid-column: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(40px);
+    margin: 0;
+    padding: 10px;
+    overflow-y: scroll;
+}
+.project-description:hover{
+    border: 1px solid rgba(0, 95, 0, 0.75);
+    border-right: 0;
+}
+.project-description::-webkit-scrollbar {
+    width: 6px;
+}
+.project-description::-webkit-scrollbar-track {
+  background: transparent;
+}
+.project-description::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 95, 0, 0.45);;
+  border-radius: 8px;
+}
+.project2 .project-description:hover {
+    border: 1px solid rgba(40, 40, 40, 0.55);
+}
+.project3 .project-description:hover {
+    border: 1px solid rgba(128, 0, 32, 0.55);
+}
+.project-description > .overview {
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+}
+div > h4 {
+    text-align: center;
+    font-size: 22px;
+    padding: 10px 0;
+    font: monospace;
+}
+li {
+    list-style-type: none;
+}
+#projects > hr {
     color: #282828;
+    margin-left: -0.65%;
 }
 #typed-text {
     margin-left: 105px;
@@ -297,19 +420,4 @@ p {
   50% {
     border-color: transparent;
   }
-}
-#projects {
-    position: absolute;
-    top: 215%;
-    z-index: 40;
-    width: 97%;
-    height: auto;
-    background: white;
-    box-sizing: border-box;
-    color: white;
-    text-align: center;
-    padding: 20px 50px 20px 50px;
-    display: grid;
-    grid-template-rows: 75% 25%;
-    gap: 0.25em;
 }
