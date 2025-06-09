@@ -118,9 +118,35 @@ b{
     font-weight: 400;
     font-style: normal;
 }
+#stack {
+    position: absolute;
+    display: grid;
+    grid-template-rows: 45% 55%;
+    top: 427%;
+    z-index: 10;
+    background: black; 
+    color: white; 
+    width: 97%;
+}
+#stack h2 {
+    margin-left: 15px;
+    font-size: 1.875rem;
+    margin-bottom: 0.125rem;
+    font-family: monospace;
+}
+#stack > div + div{
+    margin-top: 0.375em;
+}
+#stack > div + div > label {
+    margin-left: 15px;
+}
+#my-tools {
+    padding: 10px 10px 40px 10px;
+    display: flex;
+    }
 #contact-me {
     position: absolute;
-    top: 428%;
+    top: 460%;
     z-index: 10;
     width: 97%;
     height: auto;
@@ -381,9 +407,12 @@ div.project.project3:after{
     border: 1px solid rgba(128, 0, 32, 0.55);
 }
 .project-description > .overview {
-    margin: 0;
+    margin: 0 0 10px 0;
     text-align: center;
-    font-size: 16px;
+    font-size: 1.1em;
+}
+.project-description > span {
+    font-size: 20px;
 }
 div > h4 {
     text-align: center;
@@ -420,4 +449,9 @@ li {
   50% {
     border-color: transparent;
   }
+}
+mark {
+    background: rgba(0, 95, 0, 0.55);
+    color: white;
+    padding: 5px;
 }

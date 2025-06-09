@@ -56,4 +56,204 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
         }
     }
+
+    gsap.registerPlugin(ScrollTrigger, Flip, ScrambleTextPlugin);
+
+    let state = Flip.getState(".grid-container");
+
+    ScrollTrigger.create({
+        trigger: "#welcome",
+        start: "top 25%",
+        end: "bottom 25%",
+        scrub: true,
+        onUpdate: (self) => {
+          if (self.progress > 0.65) {
+            document.querySelector(".grid-container").style.left = "40%";
+          }else if (self.progress > 0.35) {
+            document.querySelector(".grid-container").style.left = "45%";
+          }else {
+            document.querySelector(".grid-container").style.left = "50%";
+          }
+    
+          Flip.from(state, {
+            duration: 0.5,
+            ease: "ease3.out",
+            absolute: true,
+          });
+    
+          state = Flip.getState(".grid-container");
+        }
+    });
+
+    ScrollTrigger.create({
+        trigger: "#others",
+        start: "top 25%",
+        end: "bottom 50%",
+        scrub: true,
+        onUpdate: (self) => {
+          if (self.progress > 0.65) {
+            document.querySelector(".grid-container").style.left = "60%";
+          }else if (self.progress > 0.35) {
+            document.querySelector(".grid-container").style.left = "50%";
+          }else {
+            document.querySelector(".grid-container").style.left = "40%";
+          }
+    
+          Flip.from(state, {
+            duration: 0.5,
+            ease: "ease3.in",
+            absolute: true,
+          });
+    
+          state = Flip.getState(".grid-container");
+        }
+    });
+
+    ScrollTrigger.create({
+        trigger: "#the-journey",
+        start: "top 45%",
+        end: "bottom 5%",
+        scrub: true,
+        onUpdate: (self) => {
+          if (self.progress > 0.4) {
+            document.querySelector(".grid-container").style.opacity = "0";
+          } else if (self.progress > 0.25) {
+            document.querySelector(".grid-container").style.opacity = "0.5";
+          } else {
+            document.querySelector(".grid-container").style.opacity = "1"; 
+          }
+    
+          Flip.from(state, {
+            duration: 0.5,
+            ease: "ease3.in",
+            absolute: true,
+          });
+    
+          state = Flip.getState(".grid-container"); 
+        },
+        onLeave: () => {
+          const nav = document.querySelector(".grid-container");
+          nav.style.opacity = "1";
+          nav.style.left = "50%";
+        },
+        onLeaveBack: () => {
+          const nav = document.querySelector(".grid-container");
+          nav.style.opacity = "1";
+          nav.style.left = "50%";
+        }
+    });
+
+    ScrollTrigger.create({
+        trigger: "#others",
+        start: "top 55%",
+        end: "bottom 25%",
+        scrub: true,
+        onEnter: () => {
+            const paragraph = document.querySelector("#others p");
+            const parentWidth = paragraph.parentElement.offsetWidth;
+            const computedStyle = window.getComputedStyle(paragraph);
+            
+            const currentWidth = paragraph.offsetWidth;
+            const currentHeight = paragraph.offsetHeight;
+            
+            gsap.set("#others p", {
+              width: currentWidth + "px",
+              minWidth: currentWidth + "px",
+              maxWidth: currentWidth + "px",
+              height: currentHeight + "px",
+              minHeight: currentHeight + "px",
+              whiteSpace: "normal",
+              wordWrap: "break-word",
+              overflowWrap: "break-word",
+              overflow: "hidden",
+              boxSizing: "border-box"
+            });
+            
+            gsap.to("#others p", {
+              duration: 1,
+              scrambleText: {
+                text: "Think of me as an explorer that loves to learn new things, understand how they work and build quality stuff",
+                chars: "lowerCase",
+                revealDelay: 0.05,
+                speed: 0.7,
+                delimiter: " ",
+                tweenLength: false
+              }
+            });
+        },
+        onLeave: () => {
+            gsap.set("#others p", {
+                width: "auto",
+                minWidth: "auto", 
+                maxWidth: "none",
+                height: "auto",
+                minHeight: "auto",
+                overflow: "visible",
+                text: "Think of me as an explorer that loves to learn new things, understand how they work and build quality stuff"
+            });
+        },
+    });
+
+    const containers = document.getElementsByClassName("project-logo");
+    const style = document.createElement('style');
+
+    Array.from(containers).forEach(container => {
+        container.addEventListener("mousemove", (e) => {
+            const bounds = container.getBoundingClientRect();
+        
+            const centerX = bounds.left + bounds.width / 2;
+            const centerY = bounds.top + bounds.height / 2;
+    
+            const offsetX = e.clientX - centerX;
+            const offsetY = e.clientY - centerY;
+    
+            const rotateY = gsap.utils.clamp(-20, 20, offsetX / 8);
+            const rotateX = gsap.utils.clamp(-20, 20, -offsetY / 8);
+    
+            const translateZ = Math.abs(offsetX) + Math.abs(offsetY) > 50 ? 10 : 0;
+    
+            gsap.to(container, {
+                rotateY,
+                rotateX,
+                z: translateZ,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+        });
+        container.addEventListener("mouseleave", () => {
+            gsap.to(container, {
+                rotateY: 0,
+                rotateX: 0,
+                z: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+        });
+        container.addEventListener("mouseenter", () => {
+            gsap.to(container, {
+                scale: 1.05,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+        });
+        container.addEventListener("mouseleave", () => {
+            gsap.to(container, {
+                scale: 1,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+        });
+    });
+    style.textContent = `
+        .project-logo {
+            transform-style: preserve-3d;
+            perspective: 10000px;
+        }
+        
+        .project-logo img {
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out;
+        }
+    `;
+    document.head.appendChild(style);
 });
