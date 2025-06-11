@@ -135,7 +135,7 @@ b{
     font-family: monospace;
 }
 #stack > div + div{
-    margin-top: 0.375em;
+    margin-top: 0.05em;
 }
 #stack > div + div > label {
     margin-left: 15px;
@@ -143,10 +143,38 @@ b{
 #my-tools {
     padding: 10px 10px 40px 10px;
     display: flex;
-    }
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+#my-tools > div:nth-child(1) {
+    clip-path: url(#firstItem);
+}
+#my-tools > div:nth-child(11) {
+    clip-path: url(#secondItem);
+}
+#my-tools > div:last-child {
+    clip-path: url(#thirdItem);
+}
+#my-tools > div {
+    background: rgba(255, 255, 255, 0.30);
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    clip-path: url(#allStackItems);
+}
+
+#my-tools img {
+    width: 100%;
+    max-width: 48px; /* Adjust based on your preferred size */
+    height: auto;
+    object-fit: contain;
+}
 #contact-me {
     position: absolute;
-    top: 460%;
+    top: 458%;
     z-index: 10;
     width: 97%;
     height: auto;

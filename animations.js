@@ -194,6 +194,36 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     });
 
+    let stackAnimationTriggered = false;
+    
+    ScrollTrigger.create({
+        trigger: "#stack",
+        start: "top 85%",
+        end: "top 80%",
+        once: true,
+        markers: true,
+        onEnter: () => {
+            if (!stackAnimationTriggered) {
+                stackAnimationTriggered = true;
+                
+                const stackParagraph = document.querySelector("#stack > div:first-child > p");
+                const originalStackText = "Fullstack web developer, Web Scraper, Economist";
+                
+                stackParagraph.textContent = "";
+
+                let i = 0;
+                const typeWriter = () => {
+                    if (i < originalStackText.length) {
+                        stackParagraph.textContent += originalStackText.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 10);
+                    } 
+                };               
+                setTimeout(typeWriter, 50);
+            }
+        }
+    });
+
     const containers = document.getElementsByClassName("project-logo");
     const style = document.createElement('style');
 
