@@ -9,20 +9,34 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(w, h);
     
-const fov = 90;
-const aspect = w / h;
-const near = 0.1;
-const far = 100;
-    
+let fov = 90;
+let aspect = w / h;
+let near = 0.1;
+let far = 100;
+
+let currentZ = 2;
 const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-camera.position.z = 2;
+
+if (w < 480) {
+    fov = 135;
+} else if (w > 480  && w < 767 ) {
+    fov = 120;
+} else if (w > 767  && w < 1025 ) {
+    fov = 120;
+    currentZ = -3;
+} else {
+    fov = 90;
+}
+
+camera.position.z = currentZ;
     
 const scene = new THREE.Scene();
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 controls.enableZoom = false;
-controls.enableRotate = true;
-controls.enablePan = false;
+const isTouchDevice = ('ontouchstart' in window) && 
+                      (navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0);
+controls.enableRotate = !isTouchDevice;controls.enablePan = false;
 
 const pointLight = new THREE.PointLight(0xffffff, 1);
 scene.add(pointLight);
@@ -68,7 +82,7 @@ window.addEventListener("scroll", () => {
     let scrollY = window.scrollY; 
     
     gsap.to(camera.position, {
-        z: 2 + scrollY * 0.01,
+        z: currentZ + scrollY * 0.01,
         x: -scrollY * 0.0015,
         y: scrollY * 0.0003,
         duration: 0.5,

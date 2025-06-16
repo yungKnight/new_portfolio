@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const timeline = gsap.timeline({ yoyo: true, ease: "power2.inOut" });
 
     timeline
-        .to(".introductory-metaphor span:first-child", { opacity: 0, duration: 1 }, "+=0.8") 
+        .to(".introductory-metaphor span:first-child", { opacity: 0, duration: 0.65 }, "+=0.8") 
         .to(".introductory-metaphor span:last-child", { opacity: 0, duration: 0.5 }, "-=0.3") 
         .to("#brag-question", { opacity: 0, scale: 0.5, duration: 0.75}, "+=0.2")    
         .to("#typed-text", { opacity: 1, scale: 1.3, duration: 0.5, onStart: startTypingAnimation }, "-=0.5")
@@ -189,8 +189,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 height: "auto",
                 minHeight: "auto",
                 overflow: "visible",
-                text: "Think of me as an explorer that loves to learn new things, understand how they work and build quality stuff"
             });
+
+            paragraph.textContent = "Think of me as an explorer that loves to learn new things, understand how they work and build quality stuff";
         },
     });
 
@@ -201,7 +202,6 @@ document.addEventListener("DOMContentLoaded", () => {
         start: "top 85%",
         end: "top 80%",
         once: true,
-        markers: true,
         onEnter: () => {
             if (!stackAnimationTriggered) {
                 stackAnimationTriggered = true;
