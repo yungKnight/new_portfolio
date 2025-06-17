@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const timeline = gsap.timeline({ yoyo: true, ease: "power2.inOut" });
 
     timeline
-        .to(".introductory-metaphor span:first-child", { opacity: 0, duration: 0.65 }, "+=0.8") 
+        .to(".introductory-metaphor span:first-child", { opacity: 0, duration: 2.45 }, "+=0.8") 
         .to(".introductory-metaphor span:last-child", { opacity: 0, duration: 0.5 }, "-=0.3") 
         .to("#brag-question", { opacity: 0, scale: 0.5, duration: 0.75}, "+=0.2")    
         .to("#typed-text", { opacity: 1, scale: 1.3, duration: 0.5, onStart: startTypingAnimation }, "-=0.5")
@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 overflow: "visible",
             });
 
-            paragraph.textContent = "Think of me as an explorer that loves to learn new things, understand how they work and build quality stuff";
+            document.querySelector("#others p").textContent = "Think of me as an explorer that loves to learn new things, understand how they work and build quality stuff";
         },
     });
 

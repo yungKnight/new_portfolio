@@ -1,0 +1,42 @@
+@media (min-width: 768px) and (max-width: 1024px) {
+	.introductory-metaphor {
+		font-size: 25px;
+	}
+	#welcome {
+		top: 35%;
+    	left: 85vw;
+    	width: 60vw;
+	}
+	#welcome > h3 {
+		font-size: 24px;
+	}
+	#welcome > h2 {
+	    font-size: 35px;
+	    margin-left: 40px;
+	}
+	#typed-text {
+		font-size: 40px;
+	}
+	p {
+		margin-left: 65px;
+	}
+	#others {
+	    top: 105%;
+	    grid-template-columns: 65% 45%;
+	    width: 60%;
+	    height: 300px;
+	}
+	#others > div {
+	    height: 90%;
+	}
+	#others:before {
+	    content: "";
+	    position: absolute;
+	    left: 50%;
+	    top: 75%;
+	    width: 11.5%;
+	    height: 50%;
+	    background: red;
+	    opacity: 0.45;
+	}
+}
