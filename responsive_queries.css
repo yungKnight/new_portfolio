@@ -36,7 +36,34 @@
 	    top: 75%;
 	    width: 11.5%;
 	    height: 50%;
-	    background: red;
 	    opacity: 0.45;
+	}
+	#the-journey,
+	#projects {
+		position: absolute;
+		top: 165vh;
+		width: 142%;
+		margin: 0 auto;
+		left: 50%;
+		transform: translateX(-33.5%);
+	}
+	#projects {
+	    top: 215vh;
+	}
+	div.project.project1:after,
+	div.project.project2:after,
+	div.project.project3:after {
+		left: 250px;
+	}
+	#stack {
+		top: 400%;
+		width: 142%;
+	}
+	#contact-me {
+		top: 427%;
+		width: 142%;
+	}
+	#visible-contact span {
+		display: none;
 	}
 }
