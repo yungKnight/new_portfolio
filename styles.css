@@ -384,7 +384,7 @@ div.project.project3:after {
     text-align: center;
     left: 270px;
     top: 100px;
-    z-index: 5;
+    z-index: -5;
     font-size: 2rem;
     letter-spacing: 3px;
     font: cursive;
@@ -394,7 +394,6 @@ div.project.project2:after{
     content: "Google Map Data Extractor";
     top: 500px;
     font-size: 1.6rem;
-    z-index: -5;
 }
 div.project.project3:after{
     content: "Guessmaster";

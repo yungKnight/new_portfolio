@@ -67,3 +67,46 @@
 		display: none;
 	}
 }
+@media (min-width: 1025px) and (max-width: 1280px) {
+	#welcome {
+    	left: 53vw;
+	}
+	#welcome > h3 {
+		font-size: 24px;
+	}
+	#welcome > h2 {
+	    font-size: 35px;
+	    margin-left: 40px;
+	}
+	#typed-text {
+		font-size: 43px;
+	}
+	#others {
+	    top: 95%;
+	    grid-template-columns: 65% 55%;
+	}
+	#others:before {
+	    content: "";
+	    position: absolute;
+	    left: 50%;
+	    top: 70%;
+	    width: 11.5%;
+	    height: 48%;
+	    opacity: 0.45;
+	}
+	div.project.project1:after,
+	div.project.project2:after,
+	div.project.project3:after {
+		left: 200px;
+	}
+	#stack {
+		top: 400%;
+	}
+	
+	#visible-contact span {
+		display: none;
+	}
+	#contact-me {
+		top: 427%;
+	}
+}
