@@ -1,3 +1,69 @@
+@media (min-width: 481px) and (max-width: 767px) {
+	.introductory-metaphor {
+		font-size: 20px;
+	}
+	#welcome {
+    	left: 90vw;
+    	width: 60vw;
+	}
+	#welcome > h2 {
+		font-size: 33px;
+		margin-left: 0px;
+	}
+	#typed-text {
+		font-size: 35px;
+		margin-left: auto;
+	}
+	p {
+		margin-left: 0px;
+	}
+	#others {
+		top: 115%;
+		width: 90%;
+	}
+	#others > div {
+	    height: 90%;
+	}
+	#others:before {
+	    width: 7.5%;
+	    height: 40%;
+	}
+	#the-journey,
+	#projects {
+		top: 165vh;
+		width: 155%;
+		margin: 0 auto;
+		left: 50%;
+		transform: translateX(-32%);
+	}
+	#projects {
+		top: 220vh;
+	}
+	div.project {
+    	grid-template-columns: 47% 53%;
+    	width: 97%;
+    }
+    div.project.project1:after,
+	div.project.project2:after,
+	div.project.project3:after {
+	    left: 21%;
+	    font-size: 1.85rem;
+	}
+	div.project.project2:after{
+	    font-size: 1.5rem;
+	}
+	#stack {
+		top: 407%;
+		width: 150%;
+	}
+	#contact-me {
+		top: 430%;
+		width: 150%;
+	}
+	#visible-contact span {
+		display: none;
+	}
+}
 @media (min-width: 768px) and (max-width: 1024px) {
 	.introductory-metaphor {
 		font-size: 25px;
@@ -83,30 +149,35 @@
 	}
 	#others {
 	    top: 95%;
-	    grid-template-columns: 65% 55%;
+	    grid-template-columns: 50% 50%;
 	}
 	#others:before {
 	    content: "";
 	    position: absolute;
-	    left: 50%;
-	    top: 70%;
-	    width: 11.5%;
-	    height: 48%;
+	    left: 40%;
+	    top: 65%;
 	    opacity: 0.45;
+	}
+	#projects {
+	    top: 220vh;
 	}
 	div.project.project1:after,
 	div.project.project2:after,
 	div.project.project3:after {
-		left: 200px;
+		left: 17.5%;
 	}
 	#stack {
-		top: 400%;
+		top: 445%;
 	}
 	
 	#visible-contact span {
 		display: none;
 	}
 	#contact-me {
-		top: 427%;
+		top: 477%;
+		padding: 20px 30px 20px 30px;
+    	display: grid;
+    	grid-template-rows: 75% 25%;
+    	gap: 0.25em;
 	}
 }

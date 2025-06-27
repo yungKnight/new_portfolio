@@ -13,20 +13,20 @@ let fov = 90;
 let aspect = w / h;
 let near = 0.1;
 let far = 100;
-
 let currentZ = 2;
-const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 
 if (w < 480) {
     fov = 135;
-} else if (w > 480  && w < 767 ) {
+} else if (w > 480  && w <= 767 ) {
     fov = 120;
+    currentZ = -2.5
 } else if (w > 767  && w < 1025 ) {
     fov = 120;
     currentZ = -3;
 } else {
     fov = 90;
 }
+const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 
 camera.position.z = currentZ;
     
@@ -36,7 +36,8 @@ const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableZoom = false;
 const isTouchDevice = ('ontouchstart' in window) && 
                       (navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0);
-controls.enableRotate = !isTouchDevice;controls.enablePan = false;
+controls.enableRotate = !isTouchDevice;
+controls.enablePan = false;
 
 const pointLight = new THREE.PointLight(0xffffff, 1);
 scene.add(pointLight);
