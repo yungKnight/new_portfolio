@@ -134,6 +134,9 @@ b{
     margin-bottom: 0.125rem;
     font-family: monospace;
 }
+#stack > div:nth-child(1) > p {
+    margin-left: 15px;
+}
 #stack > div + div{
     margin-top: 0.05em;
 }

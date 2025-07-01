@@ -1,3 +1,91 @@
+@media (max-width: 480px) {
+	.grid-container {
+		width: 80vw;
+	}
+	.introductory-metaphor {
+		font-size: 18px;
+		width: 150%;
+	}
+	#welcome {
+    	left: 62.5vw;
+    	width: 100vw;
+    	top: 15%;
+    	background: rgba(0, 0, 0, 0.15);
+    	backdrop-filter: blur(1px);
+	}
+	#welcome > h2 {
+		font-size: 30px;
+		margin-left: auto;
+	}
+	#typed-text {
+		font-size: 32px;
+		margin-left: auto;
+	}
+	p {
+		margin-left: 0px;
+	}
+	#others {
+		top: 102.5%;
+		width: 120%;
+		grid-template-columns: 50% 50%;
+	}
+	#others > p {
+		min-width: 250px;
+	}
+	#others:before {
+		left: 40%;
+	    width: 7.5%;
+	    height: 40%;
+	    top: 67.5%;
+	}
+	#the-journey,
+	#projects {
+		top: 155vh;
+		width: 155%;
+		margin: 0 auto;
+		left: 50%;
+		transform: translateX(-29%);
+	}
+	#projects {
+		top: 235vh;
+	}
+	div.project {
+    	/*grid-template-columns: 50% 50%;*/
+    	width: 97%;
+    }
+    div.project.project1:after,
+	div.project.project2:after,
+	div.project.project3:after {
+	    left: 12%;
+	    font-size: 1.45rem;
+	}
+	div.project.project2:after{
+	    font-size: 1.325rem;
+	}
+	div.project:before{
+	    width: 50px;
+	    height: 70px;
+	    left: 15px;
+	    transform: rotateX(0deg);
+	}
+	#stack {
+		top: 420%;
+		width: 155%;
+	}
+	#contact-me {
+		top: 442.5%;
+		width: 155%;
+	}
+	#contact-me > div {
+		display: initial;
+	}
+	#contact-me > div > *{
+		padding-bottom: 16px;
+	}
+	#visible-contact span {
+		display: none;
+	}
+}
 @media (min-width: 481px) and (max-width: 767px) {
 	.introductory-metaphor {
 		font-size: 20px;

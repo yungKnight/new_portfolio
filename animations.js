@@ -199,8 +199,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     ScrollTrigger.create({
         trigger: "#stack",
-        start: "top 85%",
-        end: "top 80%",
+        start: () => "top " + (h * 0.95) + "px",
+        end: () => "top " + (h * 0.90) + "px",
+        //markers: true,
         once: true,
         onEnter: () => {
             if (!stackAnimationTriggered) {
