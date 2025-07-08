@@ -50,7 +50,6 @@
 		top: 235vh;
 	}
 	div.project {
-    	/*grid-template-columns: 50% 50%;*/
     	width: 97%;
     }
     div.project.project1:after,
@@ -147,6 +146,12 @@
 	#contact-me {
 		top: 430%;
 		width: 150%;
+	}
+	#contact-me > div {
+		display: initial;
+	}
+	#contact-me > div > *{
+		padding-bottom: 16px;
 	}
 	#visible-contact span {
 		display: none;
@@ -269,6 +274,7 @@
     	gap: 0.25em;
 	}
 }
+
 @media (max-width: 480px) and (max-height: 500px) {
 	#others {
 		top: 150vh;
@@ -349,5 +355,272 @@
 	}
 	#contact-me {
 		top: 430%;
+	}
+}
+@media (max-width: 480px) and (min-height: 801px) and (max-height: 900px) {
+	#others:before {
+		height: 37.5%;
+        top: 60%;
+    }
+    #the-journey,
+	#projects {
+		top: 150vh;
+	}
+	#projects {
+		top: 220vh;
+	}
+	#stack {
+		top: 375vh;
+		width: 160%;
+	}
+	#contact-me {
+		top: 400vh;
+	}
+}
+@media (max-width: 480px) and (min-height: 901px) and (max-height: 1000px) {
+	#others {
+		top: 85vh;
+	}
+	#others:before {
+        height: 37.5%;
+        top: 63%;
+    }
+    #the-journey,
+	#projects {
+		top: 125vh;
+	}
+	#projects {
+		top: 190vh;
+	}
+	#stack {
+		top: 335vh;
+		width: 160%;
+	}
+	#contact-me {
+		top: 355vh;
+	}
+}
+@media (max-width: 480px) and (min-height: 1001px) and (max-height: 1100px) {
+	#others {
+		top: 55vh;
+	}
+	#others:before {
+        height: 37.5%;
+        top: 67.5%;
+    }
+    #the-journey,
+	#projects {
+		top: 95vh;
+		transform: translateX(-29%);
+	}
+	#projects {
+		top: 145vh;
+	}
+	#stack {
+		top: 270vh;
+	}
+	#contact-me {
+		top: 290vh;
+	}
+	div.project.project1:before {
+		top: 350px;
+		left: 10px;
+	}
+	div.project.project2:before {
+		top: 770px;
+		left: 10px;
+	}
+	div.project.project3:before {
+		top: 1180px;
+		left: 10px;
+	}
+	div.project.project1:after { top: 70px; }
+	div.project.project2:after { top: 460px; }
+	div.project.project3:after {  top: 900px; }
+}
+@media (max-width: 480px) and (min-height: 1101px) and (max-height: 1200px) {
+	#others {
+		top: 55vh;
+	}
+	#others:before {
+        height: 37.5%;
+        top: 67.5%;
+    }
+    #the-journey,
+	#projects {
+		top: 95vh;
+		
+	}
+	#projects {
+		top: 145vh;
+	}
+	#stack {
+		top: 270vh;
+	}
+	#contact-me {
+		top: 290vh;
+	}
+	div.project.project1:before {
+		top: 350px;
+		left: 10px;
+	}
+	div.project.project2:before {
+		top: 770px;
+		left: 10px;
+	}
+	div.project.project3:before {
+		top: 1180px;
+		left: 10px;
+	}
+	div.project.project1:after { top: 70px; }
+	div.project.project2:after { top: 460px; }
+	div.project.project3:after {  top: 900px; }
+	#stack {
+		top: 257.5vh;
+		left: 7.5%;
+	}
+	#contact-me {
+		top: 275vh;
+	}
+}
+@media (max-width: 480px) and (min-height: 1201px) {
+	#welcome {
+		top: 25vh;
+	}
+	#others {
+		top: 60vh;
+	}
+	#others:before {
+        height: 37.5%;
+        top: 67.5%;
+    }
+    #the-journey,
+	#projects {
+		top: 95vh;
+		
+	}
+	#projects {
+		top: 145vh;
+	}
+	#stack {
+		top: 270vh;
+	}
+	#contact-me {
+		top: 290vh;
+	}
+	div.project.project1:before {
+		top: 350px;
+		left: 10px;
+	}
+	div.project.project2:before {
+		top: 770px;
+		left: 10px;
+	}
+	div.project.project3:before {
+		top: 1180px;
+		left: 10px;
+	}
+	div.project.project1:after { top: 70px; }
+	div.project.project2:after { top: 460px; }
+	div.project.project3:after {  top: 900px; }
+	#stack {
+		top: 250vh;
+		left: 7.5%;
+	}
+	#contact-me {
+		top: 265vh;
+	}
+}
+
+@media (min-width: 481px) and (max-width: 767px) and (max-height: 500px) {
+	#others {
+		top: 200vh;
+	}
+	#others:before {
+		height: 32.5%;
+        top: 52.5%;
+    }
+	#the-journey,
+	#projects {
+		top: 270vh;
+		transform: translateX(-30%);
+		width: 145%;
+	}
+	#projects {
+		top: 380vh;
+	}
+	div.project.project1:after,
+	div.project.project2:after,
+	div.project.project3:after {
+	    left: 17.5%;
+	    font-size: 1.6rem;
+	}
+	#stack {
+		top: 675%;
+	}
+	#contact-me {
+		top: 717.5%;
+	}
+}
+@media (min-width: 481px) and (max-width: 767px) and 
+	(min-height: 501px) and (max-height: 600px) {
+	#others {
+		top: 175vh;
+	}
+	#others:before {
+		height: 32.5%;
+        top: 52.5%;
+    }
+	#the-journey,
+	#projects {
+		top: 235vh;
+		transform: translateX(-30%);
+		width: 145%;
+	}
+	#projects {
+		top: 330vh;
+	}
+	div.project.project1:after,
+	div.project.project2:after,
+	div.project.project3:after {
+	    left: 17.5%;
+	    font-size: 1.6rem;
+	}
+	#stack {
+		top: 572.5%;
+	}
+	#contact-me {
+		top: 607.5%;
+	}
+}
+@media (min-width: 481px) and (max-width: 767px) and 
+	(min-height: 601px) and (max-height: 700px) {
+	#others {
+		top: 147.5vh;
+	}
+	#others:before {
+		height: 32.5%;
+        top: 52.5%;
+    }
+	#the-journey,
+	#projects {
+		top: 202.5vh;
+		transform: translateX(-30%);
+		width: 145%;
+	}
+	#projects {
+		top: 285vh;
+	}
+	div.project.project1:after,
+	div.project.project2:after,
+	div.project.project3:after {
+	    left: 17.5%;
+	    font-size: 1.6rem;
+	}
+	#stack {
+		top: 490%;
+	}
+	#contact-me {
+		top: 520%;
 	}
 }
