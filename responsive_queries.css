@@ -591,8 +591,7 @@
 	}
 	#contact-me {
 		top: 607.5%;
-	}
-}
+	}	}
 @media (min-width: 481px) and (max-width: 767px) and 
 	(min-height: 601px) and (max-height: 700px) {
 	#others {
@@ -622,5 +621,303 @@
 	}
 	#contact-me {
 		top: 520%;
+	}	}
+@media (min-width: 481px) and (max-width: 767px) and 
+	(min-height: 601px) and (max-height: 700px) {
+	#others {
+		top: 127.5vh;
+	}
+	#others:before {
+		height: 37.5%;
+        top: 60%;
+    }
+	#the-journey,
+	#projects {
+		top: 185vh;
+		transform: translateX(-30%);
+		width: 145%;
+	}
+	#projects {
+		top: 265vh;
+	}
+	div.project.project1:after,
+	div.project.project2:after,
+	div.project.project3:after {
+	    left: 17.5%;
+	    font-size: 1.6rem;
+	}
+	#stack {
+		top: 470%;
+	}
+	#contact-me {
+		top: 500%;
+	}	}
+@media (min-width: 481px) and (max-width: 767px) and 
+	(min-height: 701px) and (max-height: 800px) {
+	#others:before {
+		height: 35%;
+    }
+    #stack {
+    	top: 397.5%;
+    }
+    #contact-me {
+    	top: 422.5%;
+    }	}
+@media (min-width: 481px) and (max-width: 767px) and 
+	(min-height: 901px) and (max-height: 1000px) {
+		#others {
+			top: 100%;
+		}
+		#others:before {
+			height: 35%;
+    	}
+    	#the-journey,
+    	#projects {
+    		top: 140vh;
+    	}
+    	#projects {
+    		top: 190vh;
+    	}
+    	#stack {
+    		top: 330%;
+    	}
+    	#contact-me {
+    		top: 350%;
+    	}	}
+@media (min-width: 481px) and (max-width: 767px) and 
+	(min-height: 1001px) and (max-height: 1100px) {
+		#others {
+			top: 90%;
+		}
+		#others:before {
+			height: 35%;
+    	}
+    	#the-journey,
+    	#projects {
+    		top: 130vh;
+    	}
+    	#projects {
+    		top: 175vh;
+    	}
+    	#stack {
+    		top: 300%;
+    	}
+    	#contact-me {
+    		top: 320%;
+    	}	}
+@media (min-width: 481px) and (max-width: 767px) and 
+	(min-height: 1101px) and (max-height: 1200px) {
+		#others {
+			top: 87.5%;
+		}
+		#others:before {
+			height: 35%;
+    	}
+    	#the-journey,
+    	#projects {
+    		top: 122.5vh;
+    	}
+    	#projects {
+    		top: 165vh;
+    	}
+    	#stack {
+    		top: 280%;
+    	}
+    	#contact-me {
+    		top: 297.5%;
+    	}	}
+@media (min-width: 481px) and (max-width: 767px) and (min-height: 1201px) {
+		#others {
+			top: 70%;
+		}
+		#others:before {
+			height: 35%;
+    	}
+    	#the-journey,
+    	#projects {
+    		top: 100vh;
+    	}
+    	#projects {
+    		top: 132.5vh;
+    	}
+    	#stack {
+    		top: 230%;
+    	}
+    	#contact-me {
+    		top: 244%;
+    	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (max-height: 500px) {
+	#others {
+		top: 150vh;
+	}
+	#others:before {
+        height: 47.5%;
+    }
+	#the-journey,
+	#projects {
+		top: 250vh;
+	}
+	#projects {
+		top: 340vh;
+	}
+	#stack {
+		top: 633%;
+	}
+	#contact-me {
+		top: 675%;
+	}
+}
+@media (min-width: 768px) and (max-width: 1024px) and 
+	(min-height: 501px) and (max-height: 600px) {
+	#others {
+		top: 135vh;
+	}
+	#others:before {
+        height: 47.5%;
+    }
+	#the-journey,
+	#projects {
+		top: 220vh;
+	}
+	#projects {
+		top: 295vh;
+	}
+	#stack {
+		top: 535%;
+	}
+	#contact-me {
+		top: 570%;
+	}	}
+@media (min-width: 768px) and (max-width: 1024px) and 
+	(min-height: 601px) and (max-height: 700px) {
+	#others {
+		top: 130vh;
+	}
+	#others:before {
+        height: 47.5%;
+    }
+	#the-journey,
+	#projects {
+		top: 200vh;
+	}
+	#projects {
+		top: 265vh;
+	}
+	#stack {
+		top: 470%;
+	}
+	#contact-me {
+		top: 500%;
+	}	}
+@media (min-width: 768px) and (max-width: 1024px) and 
+	(min-height: 701px) and (max-height: 800px) {
+	#others {
+		top: 115vh;
+	}
+	#others:before {
+        height: 47.5%;
+    }
+	#the-journey,
+	#projects {
+		top: 175vh;
+	}
+	#projects {
+		top: 225vh;
+	}
+	#stack {
+		top: 400%;
+	}
+	#contact-me {
+		top: 425%;
+	}	}
+@media (min-width: 768px) and (max-width: 1024px) and 
+	(min-height: 801px) and (max-height: 900px) {
+	#others:before {
+        height: 47.5%;
+    }
+	#stack {
+		top: 370%;
+	}
+	#contact-me {
+		top: 395%;
+	}	}
+@media (min-width: 768px) and (max-width: 1024px) and 
+	(min-height: 901px) and (max-height: 1000px) {
+	#others:before {
+        height: 47.5%;
+    }
+	#the-journey,
+	#projects {
+		top: 155vh;
+	}
+	#projects {
+		top: 200vh;
+	}
+	#stack {
+		top: 340%;
+	}
+	#contact-me {
+		top: 360%;
+	}	}
+@media (min-width: 768px) and (max-width: 1024px) and 
+	(min-height: 1001px) and (max-height: 1100px) {
+	#others:before {
+        height: 47.5%;
+    }
+	#the-journey,
+	#projects {
+		top: 150vh;
+	}
+	#projects {
+		top: 190vh;
+	}
+	#stack {
+		top: 315%;
+	}
+	#contact-me {
+		top: 333.75%;
+	}	}
+@media (min-width: 768px) and (max-width: 1024px) and 
+	(min-height: 1101px) and (max-height: 1200px) {
+	#others {
+		top: 85vh;
+	}
+	#others:before {
+        height: 47.5%;
+    }
+	#the-journey,
+	#projects {
+		top: 125vh;
+	}
+	#projects {
+		top: 160vh;
+	}
+	#stack {
+		top: 275%;
+	}
+	#contact-me {
+		top: 292.5%;
+	}	}
+@media (min-width: 768px) and (max-width: 1024px) and (min-height: 1201px) {
+	#others {
+		top: 80vh;
+	}
+	#others:before {
+        height: 47.5%;
+    }
+    #the-journey,
+	#projects {
+		top: 125vh;
+	}
+	#projects {
+		top: 160vh;
+	}
+	#stack {
+		top: 258.75%;
+	}
+	#contact-me {
+		top: 272.75%;
 	}
 }
