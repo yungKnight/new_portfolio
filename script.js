@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Highlight active nav item
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -35,20 +34,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.3, // triggers when 30% visible
+        threshold: 0.3,
         rootMargin: '0px 0px -10% 0px'
     });
 
     document.querySelectorAll('section').forEach(section => observer.observe(section));
 
     // Click-to-copy functionality
-    function copyToClipboard(text, message = `Copied: ${text}`) {
+    const copyToClipboard = (text, message = `Copied: ${text}`) =>{
         navigator.clipboard.writeText(text).then(() => alert(message));
     }
 
     const email = document.getElementById('visible-email');
     const phone = document.getElementById('phone-number');
 
-    email?.addEventListener('click', () => copyToClipboard(email.textContent.trim(), 'Email copied!'));
-    phone?.addEventListener('click', () => copyToClipboard(phone.textContent.trim(), 'Phone number copied!'));
+    email.setAttribute('title', 'click to copy');
+    email.style.cursor = 'pointer';
+    email.addEventListener(
+        'click', () => copyToClipboard(email.textContent.trim(), 'Email copied!')
+    );
+
+    phone.setAttribute('title', 'click to copy');
+    phone.style.cursor = 'pointer';
+    phone.addEventListener(
+        'click', () => copyToClipboard(phone.textContent.trim(), 'Phone number copied!')
+    );
+
+    //customizations for the contact section links
+    const contactLinks = document.querySelectorAll('p a');
+    contactLinks.forEach(link => {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+        link.style.textDecoration = "none";
+    })
 });
