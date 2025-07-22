@@ -1,6 +1,17 @@
 *{
     margin: 0;
+    scroll-behavior: smooth;
     padding: 0;
+}
+bg {
+    touch-action: auto;
+}
+canvas + div {
+    overflow-y: auto;
+    touch-action: pan-y;
+    width: 100%;
+    min-height: 200vh;
+    z-index: 3;
 }
 .grid-item.active {
     background-color: rgba(0, 30, 0, 1.0);
@@ -490,11 +501,15 @@ p a {
     text-decoration: none;        
 }
 
-p a:visited {
+span a {
+    color: white;
+}
+
+span a, p a:visited {
     color: inherit;               
 }
 
-p a:hover {
+span a:hover, p a:hover {
     color: rgba(0, 140, 0, 1.0);
 }
 

@@ -34,9 +34,7 @@ const scene = new THREE.Scene();
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 controls.enableZoom = false;
-const isTouchDevice = ('ontouchstart' in window) && 
-                      (navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0);
-controls.enableRotate = !isTouchDevice;
+controls.enableRotate = false;
 controls.enablePan = false;
 
 const pointLight = new THREE.PointLight(0xffffff, 1);
