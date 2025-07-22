@@ -60,9 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
         'click', () => copyToClipboard(phone.textContent.trim(), 'Phone number copied!')
     );
 
-    //customizations for the contact section links
+    //customizations for the contact and project section(s) links
     const contactLinks = document.querySelectorAll('p a');
-    contactLinks.forEach(link => {
+    const projectLinks = document.querySelectorAll('span a');
+    let allLinks;
+    allLinks = [...contactLinks, ...projectLinks]
+
+    allLinks.forEach(link => {
         link.setAttribute('target', '_blank');
         link.setAttribute('rel', 'noopener noreferrer');
         link.style.textDecoration = "none";
