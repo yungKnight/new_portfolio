@@ -1,8 +1,9 @@
-const h = window.innerHeight;
-const w = window.innerWidth;
+const canvas = document.getElementById('bg');
+const h = canvas.clientHeight;
+const w = canvas.clientWidth;
     
 const renderer = new THREE.WebGLRenderer({
-    canvas: document.getElementById('bg'),
+    canvas: canvas,
     antialias: true,
 });
 

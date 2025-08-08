@@ -1,14 +1,17 @@
 @media (max-width: 480px) {
 	.grid-container {
 		width: 80vw;
+		left: 30% !important;  
 	}
 	.introductory-metaphor {
 		font-size: 18px;
-		width: 150%;
+		width: 80%;
+		text-align: center;
+		margin: auto;
 	}
 	#welcome {
-    	left: 62.5vw;
-    	width: 100vw;
+		width: 80vw;
+		left: 15%;
     	top: 15%;
     	background: rgba(0, 0, 0, 0.15);
     	backdrop-filter: blur(1px);
@@ -26,11 +29,11 @@
 	}
 	#others {
 		top: 102.5%;
-		width: 120%;
+		width: 80%;
 		grid-template-columns: 50% 50%;
 	}
 	#others > p {
-		min-width: 250px;
+		font-size: 20px;
 	}
 	#others:before {
 		left: 40%;
@@ -41,11 +44,11 @@
 	#the-journey,
 	#projects {
 		top: 155vh;
-		width: 155%;
+		width: 97.5%;
 		margin: 0 auto;
 		left: 50%;
-		transform: translateX(-25%);
 	}
+	#the-journey > h2 {font-size: 26px}
 	#projects {
 		top: 235vh;
 	}
@@ -145,7 +148,7 @@
 	}
 	#contact-me {
 		top: 430%;
-		width: 150%;
+		width: 190%;
 	}
 	#contact-me > div {
 		display: initial;
